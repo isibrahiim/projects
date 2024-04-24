@@ -1,0 +1,22 @@
+-------------------
+
+1. Connecting to GitHub via HTTPS
+   - Filename: GitHub_HTTPS.txt
+   - Open with Nano: nano GitHub_HTTPS.txt
+   - Open with Gedit: gedit GitHub_HTTPS.txt &
+
+2. Configuring SSH Keys via Git Bash
+   - Filename: SSH_Config.txt
+   - Open with Nano: nano SSH_Config.txt
+   - Open with Gedit: gedit SSH_Config.txt &
+
+3. Git Basics: Clone, Push, and Pull
+   - Filename: Git_Basics.txt
+   - Open with Nano: nano Git_Basics.txt
+   - Open with Gedit: gedit Git_Basics.txt &
+
+4. Creating and Managing Git Branches
+   - Filename: Git_Branches.txt
+   - Open with Nano: nano Git_Branches.txt
+   - Open with Gedit: gedit Git_Branches.txt &
+

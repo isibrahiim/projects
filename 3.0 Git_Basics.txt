@@ -1,0 +1,23 @@
+Git Basics: Clone, Push, and Pull
+
+Git Clone:
+Purpose: Used to create a local copy of a remote repository.
+When to Use: When you want to start working on or view an existing project from GitHub or another remote repository.
+Command:
+git clone [Repository URL]
+Replace [Repository URL] with the URL of the repository you wish to clone.
+
+Git Push:
+Purpose: Uploads your local repository content to a remote repository.
+When to Use: After making changes, adding new files, or committing updates in your local repository, to share these changes with others or back them up on a remote server.
+Command:
+git push origin main
+This pushes your commits from the local main branch to the remote repository's main branch. Adjust the branch names as necessary.
+
+Git Pull:
+Purpose: Updates your local repository with changes from a remote repository.
+When to Use: To keep your local repository up-to-date with the latest changes made by others in the remote repository.
+Command:
+git pull origin main
+This pulls the latest changes from the remote repository's main branch into your local main branch. Adjust the branch names as necessary.
+

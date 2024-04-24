@@ -1,0 +1,31 @@
+Creating and Managing Git Branches
+
+Creating Branches in Git:
+Using git branch:
+This command creates a new branch but doesn't switch your working directory to it.
+git branch feature/lesson
+
+Using git checkout -b:
+This command creates a new branch and immediately switches to it.
+git checkout -b feature/lesson
+
+Using git switch -c:
+Similar to checkout -b, it creates and switches to the new branch.
+git switch -c feature/lesson
+
+Switching Between Branches:
+To switch to an existing branch:
+git checkout feature/lesson
+or
+git switch feature/lesson
+
+Pushing Branches to a Remote Repository:
+When you first push a new branch to a remote repository:
+git push -u origin feature/lesson
+-u or --set-upstream: This sets the upstream (default) remote branch for the current local branch. Subsequent git pull or git push commands with this branch can be made without specifying the remote branch, simplifying future commands to just git push or git pull.
+
+Pulling Changes:
+To update your local branch with changes from the remote branch:
+git pull
+This command fetches changes from the remote branch that is tracking the current local branch and merges them into your local branch.
+
