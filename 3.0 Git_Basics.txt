@@ -65,3 +65,56 @@
 - **Purpose:** Automatically sync the local branch `lessons/commands` with a remote branch.
 - **Command:** `git push --set-upstream origin lessons/commands`
   - This sets up automatic linkage, simplifying future `git push` and `git pull` commands.
+
+######################################################################################################
+**Understanding Git Remote Commands**
+
+### `git remote`
+- **Purpose**: Lists the remote connections you have associated with your repository.
+- **Usage**: Simply typing `git remote` in your terminal within a Git repository will display the names of all remote handlers associated with that repository.
+
+**********************************************************************************
+
+### `git remote -v`
+- **Purpose**: Shows all the remote URLs associated with the repository alongside their corresponding remote names.
+- **Usage**: Typing `git remote -v` (the 'v' stands for 'verbose') provides a detailed list of all remote handlers (fetch and push URLs for each).
+
+**********************************************************************************
+
+### `git remote add [name] [url]`
+- **Purpose**: Adds a new remote URL under a specified name to your local repository.
+- **Usage**: Use this command when you need to set up a new connection to a remote repository. Example: `git remote add origin https://github.com/user/repo.git`
+  - `[name]` is the shorthand name you assign to the remote URL for easy reference.
+  - `[url]` is the actual URL to the remote repository.
+
+**********************************************************************************
+
+**Handling Pulls and Branch Management in Git**
+
+### Pulling Without Specifying a Branch:
+- **Issue**: Pulling without specifying a branch will fetch all branches but won't merge any changes into your currently checked-out branch.
+- **Common Scenario**: If you executed `git pull` and did not see expected changes, it might be because the pull didn't automatically merge changes into your active branch.
+
+### Switching to the Main Branch:
+- **Command**: `git checkout main`
+- **Purpose**: Switches the working directory to the `main` branch.
+- **Next Steps**:
+  - If the `main` branch exists locally but isn't set to track the remote `main` branch, you'll need to manually set tracking:
+    ```bash
+    git branch --set-upstream-to=origin/main main
+    ```
+  - After setting tracking, pull the changes to sync:
+    ```bash
+    git pull
+    ```
+
+This ensures your local `main` branch is updated with the latest changes from the remote `main` branch.
+
+**********************************************************************************
+
+### Setting Up Tracking Information:
+- **Purpose**: Ensures your local branch knows which remote branch to interact with during push and pull operations.
+- **Command**: 
+  ```bash
+  git branch --set-upstream-to=origin/main main
+
