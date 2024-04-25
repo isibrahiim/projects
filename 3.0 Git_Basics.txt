@@ -47,4 +47,18 @@ command: git push --set-upstream origin feature-branch
 Once the tracking is set, you can pull from the tracked branch with just
 command: git pull
 
+Summary
+Setting Tracking Information for Git Branches
 
+Purpose: Setting tracking information configures your local Git branch to establish a default connection with a specific branch on a remote repository. This setup simplifies Git commands and ensures efficient workflow management.
+
+Benefits:
+Default Remote Branch: Linking your local branch lessons/commands to a specific remote branch means Git automatically knows which remote branch to interact with during operations like git pull or git push.
+Simplify Git Commands: Once tracking is established for lessons/commands to track origin/lessons/commands, you won’t need to specify the remote branch for future pulls or pushes.
+Convenience and Clarity: This prevents errors and streamlines your workflow, particularly when managing multiple features or branches.
+How to Set Tracking Information:
+To set your local branch lessons/commands to track the corresponding remote branch, use:git push --set-upstream origin lessons/commands
+--set-upstream (or -u): This flag sets the upstream tracking branch.
+origin: The name of the remote repository.
+lessons/commands: Both the name of your local branch and the remote branch it will track.
+After executing this command, lessons/commands will be linked to origin/lessons/commands, allowing you to use simplified commands:
