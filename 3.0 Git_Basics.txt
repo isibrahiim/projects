@@ -3,21 +3,48 @@ Git Basics: Clone, Push, and Pull
 Git Clone:
 Purpose: Used to create a local copy of a remote repository.
 When to Use: When you want to start working on or view an existing project from GitHub or another remote repository.
-Command:
-git clone [Repository URL]
+Command: git clone [Repository URL]
 Replace [Repository URL] with the URL of the repository you wish to clone.
+
+Making Changes:
+After cloning, you can make changes to the files, add new files, or modify the project as needed.
+
+Git Add:
+Purpose: Stages changes you've made to your local repository for a commit.
+When to Use: After making any changes or additions to the files in your repository.
+Command: git add .
+or specify files to add selectively: git add <file1> <file2>
+
+Git Commit:
+Purpose: Records your staged changes in the local repository's history.
+When to Use: After adding changes and before pushing them to ensure all your changes are captured in the history.
+Command: git commit -m "Your descriptive commit message"
+
 
 Git Push:
 Purpose: Uploads your local repository content to a remote repository.
 When to Use: After making changes, adding new files, or committing updates in your local repository, to share these changes with others or back them up on a remote server.
-Command:
-git push origin main
+Command: git push origin main
 This pushes your commits from the local main branch to the remote repository's main branch. Adjust the branch names as necessary.
+Pushing to a Different Branch: git push origin lesson/commands
 
 Git Pull:
 Purpose: Updates your local repository with changes from a remote repository.
 When to Use: To keep your local repository up-to-date with the latest changes made by others in the remote repository.
-Command:
-git pull origin main
+Command: git pull origin main
 This pulls the latest changes from the remote repository's main branch into your local main branch. Adjust the branch names as necessary.
+It is vital to pull the latest changes before you start making new modifications, particularly at the start of new features or bug fixes.
+Adjusting for Different Branches:
+
+If you are working on a branch other than main, replace main with your branch name.
+command: git pull origin your-branch-name
+git pull origin feature-branch
+
+
+Setting Tracking Information:
+If your branch does not automatically track the corresponding remote branch, you can set it with:
+command: git push --set-upstream origin feature-branch
+Once the tracking is set, you can pull from the tracked branch with just
+command: git pull
+
 
