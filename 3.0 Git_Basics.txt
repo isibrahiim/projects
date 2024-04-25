@@ -1,64 +1,67 @@
-Git Basics: Clone, Push, and Pull
+**Git Basics: Clone, Push, and Pull**
 
-Git Clone:
-Purpose: Used to create a local copy of a remote repository.
-When to Use: When you want to start working on or view an existing project from GitHub or another remote repository.
-Command: git clone [Repository URL]
-Replace [Repository URL] with the URL of the repository you wish to clone.
+**Git Clone:**
+- **Purpose:** Create a local copy of a remote repository.
+- **Usage:** Initiate work on an existing project.
+- **Command:** `git clone [Repository URL]`
 
-Making Changes:
-After cloning, you can make changes to the files, add new files, or modify the project as needed.
+**********************************************************************************
 
-Git Add:
-Purpose: Stages changes you've made to your local repository for a commit.
-When to Use: After making any changes or additions to the files in your repository.
-Command: git add .
-or specify files to add selectively: git add <file1> <file2>
+**Making Changes:**
+- Modify or add files as required.
 
-Git Commit:
-Purpose: Records your staged changes in the local repository's history.
-When to Use: After adding changes and before pushing them to ensure all your changes are captured in the history.
-Command: git commit -m "Your descriptive commit message"
+**********************************************************************************
 
+**Git Add:**
+- **Purpose:** Stage changes for committing.
+- **Command:** `git add .` or selectively `git add <file1> <file2>`
 
-Git Push:
-Purpose: Uploads your local repository content to a remote repository.
-When to Use: After making changes, adding new files, or committing updates in your local repository, to share these changes with others or back them up on a remote server.
-Command: git push origin main
-This pushes your commits from the local main branch to the remote repository's main branch. Adjust the branch names as necessary.
-Pushing to a Different Branch: git push origin lesson/commands
+**********************************************************************************
 
-Git Pull:
-Purpose: Updates your local repository with changes from a remote repository.
-When to Use: To keep your local repository up-to-date with the latest changes made by others in the remote repository.
-Command: git pull origin main
-This pulls the latest changes from the remote repository's main branch into your local main branch. Adjust the branch names as necessary.
-It is vital to pull the latest changes before you start making new modifications, particularly at the start of new features or bug fixes.
-Adjusting for Different Branches:
+**Git Commit:**
+- **Purpose:** Record changes in the repository's history.
+- **Command:** `git commit -m "Descriptive message"`
 
-If you are working on a branch other than main, replace main with your branch name.
-command: git pull origin your-branch-name
-git pull origin feature-branch
+**********************************************************************************
 
+**Git Push:**
+- **Purpose:** Upload local repository content to a remote repository.
+- **Command:** `git push origin main` (modify branch name as needed).
 
-Setting Tracking Information:
-If your branch does not automatically track the corresponding remote branch, you can set it with:
-command: git push --set-upstream origin feature-branch
-Once the tracking is set, you can pull from the tracked branch with just
-command: git pull
+**********************************************************************************
 
-Summary
-Setting Tracking Information for Git Branches
+**Git Pull:**
+- **Purpose:** Update the local repository with remote changes.
+- **Command:** `git pull origin main` (adjust for different branches).
+- **Note:** Essential to pull before new tasks to sync with remote updates.
 
-Purpose: Setting tracking information configures your local Git branch to establish a default connection with a specific branch on a remote repository. This setup simplifies Git commands and ensures efficient workflow management.
+**********************************************************************************
 
-Benefits:
-Default Remote Branch: Linking your local branch lessons/commands to a specific remote branch means Git automatically knows which remote branch to interact with during operations like git pull or git push.
-Simplify Git Commands: Once tracking is established for lessons/commands to track origin/lessons/commands, you won’t need to specify the remote branch for future pulls or pushes.
-Convenience and Clarity: This prevents errors and streamlines your workflow, particularly when managing multiple features or branches.
-How to Set Tracking Information:
-To set your local branch lessons/commands to track the corresponding remote branch, use:git push --set-upstream origin lessons/commands
---set-upstream (or -u): This flag sets the upstream tracking branch.
-origin: The name of the remote repository.
-lessons/commands: Both the name of your local branch and the remote branch it will track.
-After executing this command, lessons/commands will be linked to origin/lessons/commands, allowing you to use simplified commands:
+**Managing Staged Changes: How to Unstage Files**
+
+- **Command:** `git restore --staged <filename>` for specific files.
+- Examples:
+  1. **Single File:** `git restore --staged example.txt`
+  2. **Multiple Files:** `git restore --staged file1.txt file2.txt`
+  3. **All Files:** `git restore --staged .`
+
+**********************************************************************************
+
+**Undoing a Commit in Git**
+
+- **Git Reset:**
+  - **Soft:** `git reset --soft HEAD~1` (keeps changes in staging).
+  - **Mixed:** `git reset --mixed HEAD~1` (keeps changes in the working directory).
+  - **Hard:** `git reset --hard HEAD~1` (discards all changes).
+
+- **Git Revert:**
+  - **Command:** `git revert HEAD` (creates a new commit to undo the last commit).
+- **Note:** Use `git reset` cautiously in shared repositories; `git revert` is safer for collaborative environments.
+
+**********************************************************************************
+
+**Setting Tracking Information**
+
+- **Purpose:** Automatically sync the local branch `lessons/commands` with a remote branch.
+- **Command:** `git push --set-upstream origin lessons/commands`
+  - This sets up automatic linkage, simplifying future `git push` and `git pull` commands.
