@@ -1,0 +1,67 @@
+**Git Basics: Clone, Push, and Pull**
+
+**Git Clone:**
+- **Purpose:** Create a local copy of a remote repository.
+- **Usage:** Initiate work on an existing project.
+- **Command:** `git clone [Repository URL]`
+
+**********************************************************************************
+
+**Making Changes:**
+- Modify or add files as required.
+
+**********************************************************************************
+
+**Git Add:**
+- **Purpose:** Stage changes for committing.
+- **Command:** `git add .` or selectively `git add <file1> <file2>`
+
+**********************************************************************************
+
+**Git Commit:**
+- **Purpose:** Record changes in the repository's history.
+- **Command:** `git commit -m "Descriptive message"`
+
+**********************************************************************************
+
+**Git Push:**
+- **Purpose:** Upload local repository content to a remote repository.
+- **Command:** `git push origin main` (modify branch name as needed).
+
+**********************************************************************************
+
+**Git Pull:**
+- **Purpose:** Update the local repository with remote changes.
+- **Command:** `git pull origin main` (adjust for different branches).
+- **Note:** Essential to pull before new tasks to sync with remote updates.
+
+**********************************************************************************
+
+**Managing Staged Changes: How to Unstage Files**
+
+- **Command:** `git restore --staged <filename>` for specific files.
+- Examples:
+  1. **Single File:** `git restore --staged example.txt`
+  2. **Multiple Files:** `git restore --staged file1.txt file2.txt`
+  3. **All Files:** `git restore --staged .`
+
+**********************************************************************************
+
+**Undoing a Commit in Git**
+
+- **Git Reset:**
+  - **Soft:** `git reset --soft HEAD~1` (keeps changes in staging).
+  - **Mixed:** `git reset --mixed HEAD~1` (keeps changes in the working directory).
+  - **Hard:** `git reset --hard HEAD~1` (discards all changes).
+
+- **Git Revert:**
+  - **Command:** `git revert HEAD` (creates a new commit to undo the last commit).
+- **Note:** Use `git reset` cautiously in shared repositories; `git revert` is safer for collaborative environments.
+
+**********************************************************************************
+
+**Setting Tracking Information**
+
+- **Purpose:** Automatically sync the local branch `lessons/commands` with a remote branch.
+- **Command:** `git push --set-upstream origin lessons/commands`
+  - This sets up automatic linkage, simplifying future `git push` and `git pull` commands.

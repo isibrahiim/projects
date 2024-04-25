@@ -1,0 +1,54 @@
+**Configuring SSH Keys via Git Bash**
+
+### Step 1: Generate a New SSH Key:
+- **Command:** `ssh-keygen -t ed25519 -C "your_email@example.com"`
+- **Description:** Opens Git Bash and generates a new SSH key. Replace `"your_email@example.com"` with your actual GitHub email address. When prompted, save the key to the default location (`~/.ssh/id_ed25519`). Optionally, enter a passphrase for additional security or leave it blank.
+
+**********************************************************************************
+
+### Step 2: Start the SSH Agent:
+- **Command:** `eval "$(ssh-agent -s)"`
+- **Description:** Starts the SSH agent in the background, managing your SSH keys and certificates.
+
+**********************************************************************************
+
+### Step 3: Add Your SSH Key to the SSH Agent:
+- **Command:** `ssh-add ~/.ssh/id_ed25519`
+- **Description:** Adds your SSH private key to the ssh-agent, facilitating key management without repeatedly entering your passphrase.
+
+**********************************************************************************
+
+### Step 4: Copy the SSH Public Key to Clipboard:
+- **Command for Windows Git Bash:** `clip < ~/.ssh/id_ed25519.pub`
+- **Alternative for Windows:** `cat ~/.ssh/id_ed25519.pub | clip`
+- **Note:** Linux users cannot use the `clip` command. Instead, they can use `xclip` or `pbcopy` on macOS for similar functionality.
+
+**********************************************************************************
+
+### Step 5: Add Your SSH Key to GitHub:
+- **Procedure:**
+  1. Go to GitHub.com and sign in.
+  2. Navigate to Settings by clicking your profile picture at the top right.
+  3. Click on "SSH and GPG keys" in the left sidebar.
+  4. Click "New SSH key", enter a descriptive title, and paste your key into the "Key" field.
+  5. Click "Add SSH key".
+- **Outcome:** The SSH section of your GitHub repository settings will now include the added public SSH key, enabling secure connections without requiring your GitHub password.
+
+**********************************************************************************
+
+### Summary of SSH Keygen Options:
+- **`-t ed25519`:** Specifies the type of key to generate, using the ed25519 algorithm, recommended for its security and performance.
+- **`-C`:** Adds a comment to the SSH key, usually an email address, to identify the key owner easily.
+
+**********************************************************************************
+
+### What is SSH Agent?
+- **Function:** A key manager for SSH that holds your keys in memory, unencrypted, to facilitate SSH connections without entering your passphrase each time.
+- **Operation:** Runs in the background and communicates with SSH clients using a Unix domain socket.
+- **Security Considerations:** Ensures the root user on your system is trustworthy as it can access the key file directly. If the agent's connection is forwarded, the root user on the remote system must also be considered trustworthy.
+
+**********************************************************************************
+
+### How Does It Work?
+- **Initialization:** Execute `eval "$(ssh-agent -s)"` in your shell to start the agent and set up necessary environment variables.
+- **Usage:** Allows the SSH client to use keys stored by the agent for authentication without manual passphrase entry.

@@ -1,0 +1,58 @@
+**Connecting to GitHub via HTTPS: Generate a Personal Access Token**
+
+### Step 1: Log in to GitHub
+- **Description:** Navigate to the GitHub website and sign in with your credentials.
+
+**********************************************************************************
+
+### Step 2: Access Profile Settings
+- **Action:** Click on the profile icon in the upper right corner.
+- **Location:** Select "Settings" from the dropdown menu.
+
+**********************************************************************************
+
+### Step 3: Developer Settings
+- **Location:** On the Settings screen, on the left-hand side, click "Developer settings."
+
+**********************************************************************************
+
+### Step 4: Personal Access Tokens
+- **Action:** Click on "Personal access tokens," then click "Generate new token."
+
+**********************************************************************************
+
+### Step 5: Configure Your Token
+- **Details:** On the New Personal Access Token page, enter a token name in the "Note" field.
+- **Settings:** Set an expiry time. For tokens that you prefer not to expire automatically, select "No Expiration."
+
+**********************************************************************************
+
+### Step 6: Set Permissions
+- **Permissions:** Under "Select scopes," check the box for "repo" to grant the token access to private repositories.
+
+**********************************************************************************
+
+### Step 7: Generate Token
+- **Action:** Scroll to the bottom of the page and click "Generate token."
+
+**********************************************************************************
+
+### Step 8: Secure Your Token
+- **Security:** Once the token is generated, be sure to copy and securely store the token as it will not be visible again once you navigate away from the page. This token will now be used when connecting to a repository over HTTPS.
+
+**********************************************************************************
+
+### Note on Token Security
+- **Reminder:** If you lose the token, you can always delete the old token and create a new one.
+
+**********************************************************************************
+
+### Additional Steps for Repository Access:
+- **Procedure:** After obtaining your token, proceed to select or create a repository.
+- **Navigation:** Navigate to your repository and click on the "<> Code" button.
+- **Usage:** Under the HTTPS section, copy the URL provided. This is the URL you'll use in Git commands when authenticating with your personal access token.
+
+**********************************************************************************
+
+### Note on SSH
+- **Information:** The SSH section will remain empty until you configure SSH keys via Git Bash or another terminal. SSH keys provide an alternative method of authentication that does not require a personal access token.
