@@ -1,17 +1,27 @@
 Creating and Managing Git Branches
 
-Creating Branches in Git:
+A. Creating Branches in Git:
 Using git branch:
 This command creates a new branch but doesn't switch your working directory to it.
 git branch feature/lesson
 
-Using git checkout -b:
-This command creates a new branch and immediately switches to it.
-git checkout -b feature/lesson
+Switch to the Newly Created Branch:
+1. git checkout feature/lesson
+2. git switch feature/lesson
 
-Using git switch -c:
-Similar to checkout -b, it creates and switches to the new branch.
-git switch -c feature/lesson
+Switch Back to the Main Branch:
+1. git checkout main
+2. git switch main
+
+B. Create a New Branch and Switch to It:
+1. Using git checkout -b:
+Command: git checkout -b feature/lesson
+
+2. Using git switch -c:
+Command: git switch -c feature/lesson
+
+Similar to git checkout -b, this command creates and switches to the new branch feature/lesson. Introduced in Git 2.23, git switch -c provides a more intuitive syntax focused specifically on branch operations.
+
 
 Switching Between Branches:
 To switch to an existing branch:
@@ -22,7 +32,22 @@ git switch feature/lesson
 Pushing Branches to a Remote Repository:
 When you first push a new branch to a remote repository:
 git push -u origin feature/lesson
--u or --set-upstream: This sets the upstream (default) remote branch for the current local branch. Subsequent git pull or git push commands with this branch can be made without specifying the remote branch, simplifying future commands to just git push or git pull.
+
+Setting Tracking Information for Git Branches
+Setting Tracking Information" part refers to configuring your local Git branch to establish a link or relationship with a corresponding branch on a remote repository. This configuration tells Git where to push and pull changes by default for the current branch, simplifying future commands.
+
+How to Set Tracking Information
+# Using the -u option, which is shorthand for --set-upstream
+git push -u origin lessons/commands
+# This command sets the upstream (tracking) reference for the local branch 'lessons/commands'
+# to 'origin/lessons/commands'. Future 'git pull' or 'git push' commands executed from this
+# branch will automatically reference 'origin/lessons/commands'.
+
+# Using the --set-upstream option explicitly
+git push --set-upstream origin lessons/commands
+# This does exactly the same as the -u option, setting the upstream tracking branch for
+# 'lessons/commands' to 'origin/lessons/commands', simplifying future pull and push operations.
+
 
 Pulling Changes:
 To update your local branch with changes from the remote branch:
