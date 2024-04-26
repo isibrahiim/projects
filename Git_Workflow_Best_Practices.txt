@@ -4,42 +4,64 @@
    - Always pull the latest changes from the relevant branch to ensure your local copy is up-to-date.
    - **Command:**
      ```bash
-     git checkout <branch-name>
-     git pull origin <branch-name>
+     git checkout lessons/commands
+     git pull origin lessons/commands
      ```
 
 **2. Working with Branches:**
    - Switch to the branch you intend to work on and ensure it's updated.
    - **Command to switch and pull:**
      ```bash
-     git checkout <branch-name>
-     git pull origin <branch-name>
+     git checkout lessons/commands
+     git pull origin lessons/commands
      ```
 
-**3. Merging Updates from Main:**
-   - Regularly merge updates from `main` or a parent branch to your feature branch to keep it current.
+**3. Merging Updates from Main to Feature Branches:**
+   - Regularly merge updates from `main` to your feature branch `lessons/commands` to keep it current.
    - **Command to merge:**
      ```bash
-     git checkout <feature-branch>
+     git checkout lessons/commands
      git merge main
      ```
 
-**4. Pushing Changes:**
-   - After making changes and committing them on your branch, push them to ensure collaborators have access to your updates.
-   - **Command to push:**
+**4. Updating Feature Branches and Later Merging to Main:**
+   - Develop and update on feature branches like `lessons/commands`, then merge these updates back to the `main` branch for integration.
+   - **Command to merge feature branch to main:**
      ```bash
-     git push origin <branch-name>
+     git checkout main
+     git merge lessons/commands
+     git push origin main
      ```
 
-**5. Setting Upstream for Branches:**
+**5. Pushing Changes:**
+   - After making changes and committing them on your branch `lessons/commands`, push them to ensure collaborators have access to your updates.
+   - **Command to push:**
+     ```bash
+     git push origin lessons/commands
+     ```
+
+**6. Setting Upstream for Branches:**
    - When pushing a new branch for the first time, set the upstream to simplify future push and pull commands.
    - **Command to set upstream:**
      ```bash
-     git push --set-upstream origin <branch-name>
+     git push --set-upstream origin lessons/commands
      ```
 
-These commands provide a foundation for maintaining synchronization with your team's remote repository and managing your contributions effectively. They ensure that your work is both current with the team's progress and preserved on the remote repository.
+**7. Pulling Specific Branches:**
+   - When working on a specific branch like `lessons/commands`, regularly pull updates specifically from that branch to ensure it is current.
+   - **Command to pull from a specific branch:**
+     ```bash
+     git pull origin lessons/commands
+     ```
 
-**Where to Add:**
-- Add this to the "Git Basics" file (`Git_Basics.txt`), as it extends the fundamental concepts of daily Git operations and teamwork best practices.
+**8. Managing Branch Updates:**
+   - Understand that pushing to one branch does not update other branches; updates need to be merged across branches as needed.
+   - **Commands for branch updates:**
+     ```bash
+     git checkout lessons/commands
+     git merge main
+     git push origin lessons/commands
+     ```
+
+These guidelines ensure that your work is aligned with your team and that your branches are managed effectively for both individual and collaborative efforts.
 
