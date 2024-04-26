@@ -1,0 +1,45 @@
+**Git Workflow Best Practices:**
+
+**1. Pull Before You Start Work:**
+   - Always pull the latest changes from the relevant branch to ensure your local copy is up-to-date.
+   - **Command:**
+     ```bash
+     git checkout <branch-name>
+     git pull origin <branch-name>
+     ```
+
+**2. Working with Branches:**
+   - Switch to the branch you intend to work on and ensure it's updated.
+   - **Command to switch and pull:**
+     ```bash
+     git checkout <branch-name>
+     git pull origin <branch-name>
+     ```
+
+**3. Merging Updates from Main:**
+   - Regularly merge updates from `main` or a parent branch to your feature branch to keep it current.
+   - **Command to merge:**
+     ```bash
+     git checkout <feature-branch>
+     git merge main
+     ```
+
+**4. Pushing Changes:**
+   - After making changes and committing them on your branch, push them to ensure collaborators have access to your updates.
+   - **Command to push:**
+     ```bash
+     git push origin <branch-name>
+     ```
+
+**5. Setting Upstream for Branches:**
+   - When pushing a new branch for the first time, set the upstream to simplify future push and pull commands.
+   - **Command to set upstream:**
+     ```bash
+     git push --set-upstream origin <branch-name>
+     ```
+
+These commands provide a foundation for maintaining synchronization with your team's remote repository and managing your contributions effectively. They ensure that your work is both current with the team's progress and preserved on the remote repository.
+
+**Where to Add:**
+- Add this to the "Git Basics" file (`Git_Basics.txt`), as it extends the fundamental concepts of daily Git operations and teamwork best practices.
+
