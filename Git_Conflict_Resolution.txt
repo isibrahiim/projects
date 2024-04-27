@@ -1,0 +1,48 @@
+Resolving Git Conflicts
+
+When multiple developers work on the same parts of a project, conflicts can occur. These conflicts often arise when attempting to merge branches that have made competing changes to the same file.
+
+Common Scenario:
+Two developers, Developer 1 and Developer 2, work on branches feature1 and feature2, respectively. Both intend to modify the same file, Feature.js, adding different features to the same method.
+
+Conflict Resolution Process:
+1. Both developers pull the latest changes from the main branch before starting their work to ensure they're building on the latest version.
+
+Commands used:
+- git pull origin main
+
+2. Each developer creates their branch and starts working:
+Developer 1:
+- git checkout -b feature1
+- (make changes)
+- git add Feature.js
+- git commit -m "chore: added feature 1"
+- git push -u origin feature1
+
+Developer 2 (after Developer 1 has merged their changes to main):
+- git checkout -b feature2
+- (make changes)
+- git pull origin main (pulls in latest changes including Developer 1's work)
+- git add Feature.js
+- git commit -m "chore: added feature 2"
+- git push -u origin feature2
+
+3. If Developer 2 encounters a conflict after pulling from main, they need to resolve the conflict in Feature.js. Git will mark the file with conflicts.
+
+Resolving Conflicts:
+- git status (to identify the conflicted files)
+- git diff (to view the specific changes and conflicts)
+- (Manually adjust the file to resolve conflicts)
+- git add Feature.js (to mark the conflict as resolved)
+- git commit -m "Resolve merge conflicts"
+- git push origin feature2
+
+Useful Commands for Conflict Investigation:
+- git log --merge (shows commit logs that are causing the merge conflict)
+- git diff (shows detailed conflict in file content)
+
+After conflicts are resolved, the updated branch can be merged back into the main branch via a pull request on GitHub, ensuring that all changes are harmoniously integrated.
+
+Summary:
+Resolving Git conflicts is a critical skill for collaborative development. The use of `git pull` before starting work and `git pull` before attempting to merge branches helps reduce the likelihood of conflicts. When conflicts occur, `git status`, `git log --merge`, and `git diff` are invaluable tools for identifying and resolving these conflicts effectively.
+
