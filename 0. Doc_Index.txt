@@ -20,3 +20,8 @@
    - Open with Nano: nano Git_Branches.txt
    - Open with Gedit: gedit Git_Branches.txt &
 
+5. Git Conflict Resolution
+   - Filename: Git_Conflict_Resolution.txt
+   - Open with Nano: nano Git_Conflict_Resolution.txt
+   - Open with Gedit: gedit Git_Conflict_Resolution.txt &
+
