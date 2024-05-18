@@ -25,3 +25,12 @@
    - Open with Nano: nano Git_Conflict_Resolution.txt
    - Open with Gedit: gedit Git_Conflict_Resolution.txt &
 
+6. Opening Files with Gedit or Mousepad in Ubuntu
+   - Command for Gedit: `nohup gedit FILENAME &`
+   - Command for Gedit (alternative): `gedit FILENAME`
+   - Command for Mousepad: `nohup mousepad FILENAME &`
+   - Command for Mousepad (alternative): `mousepad FILENAME`
+   - Note: Replace FILENAME with the name of the file you want to open.
+
+
+
