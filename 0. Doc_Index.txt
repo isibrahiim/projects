@@ -25,3 +25,6 @@
    - Open with Nano: nano Git_Conflict_Resolution.txt
    - Open with Gedit: gedit Git_Conflict_Resolution.txt &
 
+
+
+
